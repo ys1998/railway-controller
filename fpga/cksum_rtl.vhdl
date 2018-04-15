@@ -684,9 +684,9 @@ begin
 									led_out <="11100010"; -- amber
 									end if;
 								else 
-									if(timer<16*TIMER_COUNT) then 
+									if(timer<22*TIMER_COUNT) then 
 										led_out <= "11100100";
-									elsif(timer < 17*TIMER_COUNT) then 
+									elsif(timer < 23*TIMER_COUNT) then 
 										led_out <= "11100010";
 									else 
 										led_out <= "11100001";
