@@ -1,5 +1,11 @@
-Team : Entity
-Members : 
+Railway Controller: CS254 Course Project
+
+Team 
+====
+Entity
+
+Members  
+=======
 160050042 Rupesh
 160050032 Utkarsh Gupta
 160050025 Naman Jain
@@ -36,5 +42,6 @@ For the relay portion, we used PySerial library and a python script. Two instanc
 
 Citation
 ========
-For Uart communication, http://www.bealto.com/fpga-uart.html provided us with a basic_uart module which did the uart read and write when run from cksum_rtl as portmap.
-For the Optional part on communicating between serial ports, https://stackoverflow.com/questions/676172/full-examples-of-using-pyserial-package
+1. https://github.com/makestuff/libfpgalink for the base code and libraries.
+2. For Uart communication, http://www.bealto.com/fpga-uart.html provided us with a basic_uart module which did the uart read and write when run from cksum_rtl as portmap.
+3. For the Optional part on communicating between serial ports, https://stackoverflow.com/questions/676172/full-examples-of-using-pyserial-package
