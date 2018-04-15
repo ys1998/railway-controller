@@ -1,0 +1,951 @@
+Release 14.7 - xst P.20131013 (lin64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> 
+Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.04 secs
+ 
+--> 
+Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.04 secs
+ 
+--> 
+Reading design: top_level.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Parsing
+  3) HDL Elaboration
+  4) HDL Synthesis
+       4.1) HDL Synthesis Report
+  5) Advanced HDL Synthesis
+       5.1) Advanced HDL Synthesis Report
+  6) Low Level Synthesis
+  7) Partition Report
+  8) Design Summary
+       8.1) Primitive and Black Box Usage
+       8.2) Device utilization summary
+       8.3) Partition Resource Summary
+       8.4) Timing Report
+            8.4.1) Clock Information
+            8.4.2) Asynchronous Control Signals Information
+            8.4.3) Timing Summary
+            8.4.4) Timing Details
+            8.4.5) Cross Clock Domains Report
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "top_level.prj"
+Input Format                       : mixed
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "top_level"
+Output Format                      : NGC
+Target Device                      : xc6slx45-2-csg324
+
+---- Source Options
+Top Module Name                    : top_level
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Shift Register Extraction          : YES
+ROM Style                          : Auto
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Shift Register Minimum Size        : 2
+Use DSP Block                      : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+LUT Combining                      : Auto
+Reduce Control Sets                : Auto
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 16
+Register Duplication               : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Auto
+Use Synchronous Set                : Auto
+Use Synchronous Reset              : Auto
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Power Reduction                    : NO
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+DSP48 Utilization Ratio            : 100
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Parsing                                  *
+=========================================================================
+Parsing VHDL file "/home/rupesh/20140524/makestuff/hdlmake/apps/makestuff/swled/templates/harness.vhdl" into library work
+Parsing entity <swled>.
+Parsing VHDL file "/home/rupesh/20140524/makestuff/hdlmake/apps/makestuff/swled/templates/fx2all/vhdl/basic_uart.vhd" into library work
+Parsing entity <basic_uart>.
+Parsing architecture <Behavioral> of entity <basic_uart>.
+Parsing VHDL file "/home/rupesh/20140524/makestuff/hdlmake/apps/makestuff/swled/templates/fx2all/vhdl/debouncer.vhd" into library work
+Parsing entity <debouncer>.
+Parsing architecture <Behavioral> of entity <debouncer>.
+Parsing VHDL file "/home/rupesh/20140524/makestuff/hdlmake/apps/makestuff/swled/templates/fx2all/vhdl/decrypter.vhd" into library work
+Parsing entity <decrypter>.
+Parsing architecture <Behavioral> of entity <decrypter>.
+Parsing VHDL file "/home/rupesh/20140524/makestuff/hdlmake/apps/makestuff/swled/templates/fx2all/vhdl/encrypter.vhd" into library work
+Parsing entity <encrypter>.
+Parsing architecture <Behavioral> of entity <encrypter>.
+Parsing VHDL file "/home/rupesh/20140524/makestuff/hdlmake/libs/makestuff/comm-fpga/fx2/vhdl/comm_fpga_fx2.vhdl" into library work
+Parsing entity <comm_fpga_fx2>.
+Parsing architecture <rtl> of entity <comm_fpga_fx2>.
+Parsing VHDL file "/home/rupesh/20140524/makestuff/hdlmake/apps/makestuff/swled/templates/fx2all/vhdl/top_level.vhdl" into library work
+Parsing entity <top_level>.
+Parsing architecture <structural> of entity <top_level>.
+Parsing VHDL file "/home/rupesh/20140524/makestuff/hdlmake/libs/makestuff/seven-seg/vhdl/seven_seg.vhdl" into library work
+Parsing entity <seven_seg>.
+Parsing architecture <rtl> of entity <seven_seg>.
+Parsing VHDL file "/home/rupesh/20140524/makestuff/hdlmake/apps/makestuff/swled/cksum/vhdl/cksum_rtl.vhdl" into library work
+Parsing architecture <rtl> of entity <swled>.
+
+=========================================================================
+*                            HDL Elaboration                            *
+=========================================================================
+
+Elaborating entity <top_level> (architecture <structural>) from library <work>.
+
+Elaborating entity <comm_fpga_fx2> (architecture <rtl>) from library <work>.
+
+Elaborating entity <debouncer> (architecture <Behavioral>) with generics from library <work>.
+
+Elaborating entity <swled> (architecture <rtl>) from library <work>.
+
+Elaborating entity <decrypter> (architecture <Behavioral>) from library <work>.
+WARNING:HDLCompiler:871 - "/home/rupesh/20140524/makestuff/hdlmake/apps/makestuff/swled/templates/fx2all/vhdl/decrypter.vhd" Line 59: Using initial value 32 for thirty_two since it is never assigned
+
+Elaborating entity <encrypter> (architecture <Behavioral>) from library <work>.
+
+Elaborating entity <basic_uart> (architecture <Behavioral>) with generics from library <work>.
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Synthesizing Unit <top_level>.
+    Related source file is "/home/rupesh/20140524/makestuff/hdlmake/apps/makestuff/swled/templates/fx2all/vhdl/top_level.vhdl".
+    Found 1-bit tristate buffer for signal <fx2Addr_out<0>> created at line 26
+    Summary:
+	inferred   1 Tristate(s).
+Unit <top_level> synthesized.
+
+Synthesizing Unit <comm_fpga_fx2>.
+    Related source file is "/home/rupesh/20140524/makestuff/hdlmake/libs/makestuff/comm-fpga/fx2/vhdl/comm_fpga_fx2.vhdl".
+    Found 17-bit register for signal <count>.
+    Found 7-bit register for signal <chanAddr>.
+    Found 1-bit register for signal <isWrite>.
+    Found 1-bit register for signal <isAligned>.
+    Found 4-bit register for signal <state>.
+    Found finite state machine <FSM_0> for signal <state>.
+    -----------------------------------------------------------------------
+    | States             | 9                                              |
+    | Transitions        | 21                                             |
+    | Inputs             | 7                                              |
+    | Outputs            | 8                                              |
+    | Clock              | clk_in (rising_edge)                           |
+    | Power Up State     | s_reset                                        |
+    | Encoding           | auto                                           |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 17-bit subtractor for signal <GND_6_o_GND_6_o_sub_21_OUT<16:0>> created at line 1308.
+    Found 1-bit tristate buffer for signal <fifoOp<1>> created at line 106
+    Found 1-bit tristate buffer for signal <fifoOp<0>> created at line 106
+    Found 1-bit tristate buffer for signal <fx2PktEnd_out> created at line 106
+    Found 1-bit tristate buffer for signal <fx2FifoSel_out> created at line 106
+    Found 1-bit tristate buffer for signal <fx2Data_io<7>> created at line 233
+    Found 1-bit tristate buffer for signal <fx2Data_io<6>> created at line 233
+    Found 1-bit tristate buffer for signal <fx2Data_io<5>> created at line 233
+    Found 1-bit tristate buffer for signal <fx2Data_io<4>> created at line 233
+    Found 1-bit tristate buffer for signal <fx2Data_io<3>> created at line 233
+    Found 1-bit tristate buffer for signal <fx2Data_io<2>> created at line 233
+    Found 1-bit tristate buffer for signal <fx2Data_io<1>> created at line 233
+    Found 1-bit tristate buffer for signal <fx2Data_io<0>> created at line 233
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred  26 D-type flip-flop(s).
+	inferred  27 Multiplexer(s).
+	inferred  12 Tristate(s).
+	inferred   1 Finite State Machine(s).
+Unit <comm_fpga_fx2> synthesized.
+
+Synthesizing Unit <debouncer>.
+    Related source file is "/home/rupesh/20140524/makestuff/hdlmake/apps/makestuff/swled/templates/fx2all/vhdl/debouncer.vhd".
+        wait_cycles = "11110100001000111111"
+    Found 1-bit register for signal <oldbutton>.
+    Found 1-bit register for signal <button_deb>.
+    Found 20-bit register for signal <count>.
+    Found 20-bit adder for signal <count[19]_GND_22_o_add_0_OUT> created at line 56.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred  22 D-type flip-flop(s).
+Unit <debouncer> synthesized.
+
+Synthesizing Unit <swled>.
+    Related source file is "/home/rupesh/20140524/makestuff/hdlmake/apps/makestuff/swled/templates/harness.vhdl".
+    Found 1-bit register for signal <encrypter_reset>.
+    Found 32-bit register for signal <cntrdecrypt>.
+    Found 32-bit register for signal <cntr>.
+    Found 32-bit register for signal <timer>.
+    Found 1-bit register for signal <enable_encryption>.
+    Found 32-bit register for signal <encrypter_inp>.
+    Found 32-bit register for signal <decrypt_data_part1>.
+    Found 32-bit register for signal <decrypt_data_part2>.
+    Found 32-bit register for signal <uart_data_part1>.
+    Found 32-bit register for signal <uart_data_part2>.
+    Found 1-bit register for signal <enable_decryptor1>.
+    Found 32-bit register for signal <encrypted_data1>.
+    Found 32-bit register for signal <stage>.
+    Found 8-bit register for signal <uart_buffer>.
+    Found 1-bit register for signal <f2hValid_out2>.
+    Found 8-bit register for signal <f2hData_out2>.
+    Found 32-bit register for signal <second_counter>.
+    Found 8-bit register for signal <led_out>.
+    Found 1-bit register for signal <uart_tx_enable>.
+    Found 8-bit register for signal <train_direction>.
+    Found 8-bit register for signal <uart_tx_data>.
+    Found 1-bit register for signal <decrypter_reset>.
+    Found 32-bit adder for signal <cntrdecrypt[31]_GND_23_o_add_63_OUT> created at line 179.
+    Found 32-bit adder for signal <second_counter[31]_GND_23_o_add_80_OUT> created at line 191.
+    Found 32-bit adder for signal <timer[31]_GND_23_o_add_427_OUT> created at line 672.
+    Found 32-bit adder for signal <cntr[31]_GND_23_o_add_578_OUT> created at line 857.
+    Found 32-bit subtractor for signal <timer[31]_GND_23_o_sub_5_OUT<31:0>> created at line 124.
+    Found 32-bit 4-to-1 multiplexer for signal <_n8525> created at line 166.
+    Found 32-bit 4-to-1 multiplexer for signal <_n8528> created at line 199.
+    Found 32-bit 4-to-1 multiplexer for signal <_n8531> created at line 166.
+    Found 32-bit 7-to-1 multiplexer for signal <_n8534> created at line 212.
+    Found 32-bit 4-to-1 multiplexer for signal <_n8537> created at line 166.
+    Found 32-bit 4-to-1 multiplexer for signal <_n8540> created at line 199.
+    Found 32-bit 4-to-1 multiplexer for signal <_n8543> created at line 166.
+    Found 32-bit 7-to-1 multiplexer for signal <_n8546> created at line 212.
+    Found 32-bit 4-to-1 multiplexer for signal <_n8549> created at line 166.
+    Found 32-bit 4-to-1 multiplexer for signal <_n8552> created at line 199.
+    Found 32-bit 4-to-1 multiplexer for signal <_n8555> created at line 166.
+    Found 32-bit comparator greater for signal <GND_23_o_second_counter[31]_LessThan_55_o> created at line 167
+    Found 32-bit comparator greater for signal <timer[31]_GND_23_o_LessThan_56_o> created at line 168
+    Found 32-bit comparator greater for signal <GND_23_o_timer[31]_LessThan_352_o> created at line 513
+    Found 32-bit comparator greater for signal <GND_23_o_timer[31]_LessThan_361_o> created at line 533
+    Found 32-bit comparator greater for signal <GND_23_o_timer[31]_LessThan_370_o> created at line 553
+    Found 32-bit comparator greater for signal <GND_23_o_timer[31]_LessThan_379_o> created at line 573
+    Found 32-bit comparator greater for signal <GND_23_o_timer[31]_LessThan_388_o> created at line 593
+    Found 32-bit comparator greater for signal <GND_23_o_timer[31]_LessThan_394_o> created at line 609
+    Found 32-bit comparator greater for signal <GND_23_o_timer[31]_LessThan_395_o> created at line 611
+    Found 32-bit comparator greater for signal <GND_23_o_timer[31]_LessThan_401_o> created at line 619
+    Found 32-bit comparator greater for signal <GND_23_o_timer[31]_LessThan_414_o> created at line 645
+    Found 32-bit comparator greater for signal <GND_23_o_timer[31]_LessThan_420_o> created at line 661
+    Found 32-bit comparator greater for signal <GND_23_o_timer[31]_LessThan_421_o> created at line 663
+    Found 32-bit comparator greater for signal <GND_23_o_timer[31]_LessThan_427_o> created at line 671
+    Found 32-bit comparator greater for signal <GND_23_o_timer[31]_LessThan_433_o> created at line 687
+    Found 32-bit comparator greater for signal <GND_23_o_timer[31]_LessThan_434_o> created at line 689
+    Found 32-bit comparator greater for signal <GND_23_o_timer[31]_LessThan_440_o> created at line 697
+    Found 32-bit comparator greater for signal <GND_23_o_timer[31]_LessThan_640_o> created at line 946
+    Summary:
+	inferred   5 Adder/Subtractor(s).
+	inferred 398 D-type flip-flop(s).
+	inferred  18 Comparator(s).
+	inferred 1656 Multiplexer(s).
+Unit <swled> synthesized.
+
+Synthesizing Unit <decrypter>.
+    Related source file is "/home/rupesh/20140524/makestuff/hdlmake/apps/makestuff/swled/templates/fx2all/vhdl/decrypter.vhd".
+    Found 32-bit register for signal <P>.
+    Found 1-bit register for signal <done>.
+    Found 1-bit register for signal <second_loop>.
+    Found 1-bit register for signal <first_loop>.
+    Found 32-bit register for signal <myC>.
+    Found 4-bit register for signal <T>.
+    Found 6-bit register for signal <N1>.
+    Found 4-bit adder for signal <T[3]_PWR_16_o_add_35_OUT> created at line 1241.
+    Found 6-bit subtractor for signal <GND_24_o_GND_24_o_sub_37_OUT<5:0>> created at line 1308.
+    Summary:
+	inferred   2 Adder/Subtractor(s).
+	inferred  77 D-type flip-flop(s).
+	inferred   5 Multiplexer(s).
+Unit <decrypter> synthesized.
+
+Synthesizing Unit <encrypter>.
+    Related source file is "/home/rupesh/20140524/makestuff/hdlmake/apps/makestuff/swled/templates/fx2all/vhdl/encrypter.vhd".
+    Found 32-bit register for signal <C>.
+    Found 1-bit register for signal <done>.
+    Found 1-bit register for signal <first_loop>.
+    Found 32-bit register for signal <myC>.
+    Found 4-bit register for signal <T>.
+    Found 6-bit register for signal <N1>.
+    Found 4-bit adder for signal <T[3]_GND_1033_o_add_33_OUT> created at line 1241.
+    Found 6-bit subtractor for signal <GND_1033_o_GND_1033_o_sub_35_OUT<5:0>> created at line 1308.
+    Summary:
+	inferred   2 Adder/Subtractor(s).
+	inferred  76 D-type flip-flop(s).
+	inferred   4 Multiplexer(s).
+Unit <encrypter> synthesized.
+
+Synthesizing Unit <basic_uart>.
+    Related source file is "/home/rupesh/20140524/makestuff/hdlmake/apps/makestuff/swled/templates/fx2all/vhdl/basic_uart.vhd".
+        DIVISOR = 1250
+    Found 1-bit register for signal <tx_state_ready>.
+    Found 9-bit register for signal <tx_state_bits>.
+    Found 8-bit register for signal <rx_state_bits>.
+    Found 4-bit register for signal <rx_state_nbits>.
+    Found 4-bit register for signal <tx_state_nbits>.
+    Found 11-bit register for signal <sample_counter>.
+    Found 1-bit register for signal <sample>.
+    Found 1-bit register for signal <rx_state_fsm_state>.
+    Found 1-bit register for signal <rx_state_enable>.
+    Found 1-bit register for signal <tx_state_fsm_state>.
+    Found 4-bit register for signal <rx_state_counter>.
+    Found 4-bit register for signal <tx_state_counter>.
+    Found 11-bit adder for signal <sample_counter[10]_GND_2043_o_add_1_OUT> created at line 74.
+    Found 4-bit adder for signal <rx_state_nbits[3]_GND_2043_o_add_14_OUT> created at line 125.
+    Found 4-bit adder for signal <rx_state_counter[3]_GND_2043_o_add_19_OUT> created at line 128.
+    Found 4-bit adder for signal <tx_state_counter[3]_GND_2043_o_add_40_OUT> created at line 180.
+    Found 4-bit subtractor for signal <GND_2043_o_GND_2043_o_sub_34_OUT<3:0>> created at line 177.
+    Summary:
+	inferred   5 Adder/Subtractor(s).
+	inferred  49 D-type flip-flop(s).
+	inferred  12 Multiplexer(s).
+Unit <basic_uart> synthesized.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 20
+ 11-bit adder                                          : 1
+ 17-bit subtractor                                     : 1
+ 20-bit adder                                          : 5
+ 32-bit adder                                          : 4
+ 32-bit subtractor                                     : 1
+ 4-bit adder                                           : 5
+ 4-bit subtractor                                      : 1
+ 6-bit subtractor                                      : 2
+# Registers                                            : 66
+ 1-bit register                                        : 28
+ 11-bit register                                       : 1
+ 17-bit register                                       : 1
+ 20-bit register                                       : 5
+ 32-bit register                                       : 15
+ 4-bit register                                        : 6
+ 6-bit register                                        : 2
+ 7-bit register                                        : 1
+ 8-bit register                                        : 6
+ 9-bit register                                        : 1
+# Comparators                                          : 18
+ 32-bit comparator greater                             : 18
+# Multiplexers                                         : 1704
+ 1-bit 2-to-1 multiplexer                              : 424
+ 11-bit 2-to-1 multiplexer                             : 1
+ 17-bit 2-to-1 multiplexer                             : 3
+ 32-bit 2-to-1 multiplexer                             : 1119
+ 32-bit 4-to-1 multiplexer                             : 9
+ 32-bit 7-to-1 multiplexer                             : 2
+ 4-bit 2-to-1 multiplexer                              : 5
+ 6-bit 2-to-1 multiplexer                              : 2
+ 8-bit 2-to-1 multiplexer                              : 136
+ 9-bit 2-to-1 multiplexer                              : 3
+# Tristates                                            : 13
+ 1-bit tristate buffer                                 : 13
+# FSMs                                                 : 1
+# Xors                                                 : 12
+ 1-bit xor2                                            : 10
+ 32-bit xor2                                           : 2
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+WARNING:Xst:2677 - Node <decrypt_data_part2_3> of sequential type is unconnected in block <swled_app>.
+WARNING:Xst:2677 - Node <decrypt_data_part2_4> of sequential type is unconnected in block <swled_app>.
+WARNING:Xst:2677 - Node <decrypt_data_part2_5> of sequential type is unconnected in block <swled_app>.
+WARNING:Xst:2677 - Node <decrypt_data_part2_11> of sequential type is unconnected in block <swled_app>.
+WARNING:Xst:2677 - Node <decrypt_data_part2_12> of sequential type is unconnected in block <swled_app>.
+WARNING:Xst:2677 - Node <decrypt_data_part2_13> of sequential type is unconnected in block <swled_app>.
+WARNING:Xst:2677 - Node <decrypt_data_part2_19> of sequential type is unconnected in block <swled_app>.
+WARNING:Xst:2677 - Node <decrypt_data_part2_20> of sequential type is unconnected in block <swled_app>.
+WARNING:Xst:2677 - Node <decrypt_data_part2_21> of sequential type is unconnected in block <swled_app>.
+WARNING:Xst:2677 - Node <decrypt_data_part2_27> of sequential type is unconnected in block <swled_app>.
+WARNING:Xst:2677 - Node <decrypt_data_part2_28> of sequential type is unconnected in block <swled_app>.
+WARNING:Xst:2677 - Node <decrypt_data_part2_29> of sequential type is unconnected in block <swled_app>.
+WARNING:Xst:2677 - Node <decrypt_data_part1_3> of sequential type is unconnected in block <swled_app>.
+WARNING:Xst:2677 - Node <decrypt_data_part1_4> of sequential type is unconnected in block <swled_app>.
+WARNING:Xst:2677 - Node <decrypt_data_part1_5> of sequential type is unconnected in block <swled_app>.
+WARNING:Xst:2677 - Node <decrypt_data_part1_11> of sequential type is unconnected in block <swled_app>.
+WARNING:Xst:2677 - Node <decrypt_data_part1_12> of sequential type is unconnected in block <swled_app>.
+WARNING:Xst:2677 - Node <decrypt_data_part1_13> of sequential type is unconnected in block <swled_app>.
+WARNING:Xst:2677 - Node <decrypt_data_part1_19> of sequential type is unconnected in block <swled_app>.
+WARNING:Xst:2677 - Node <decrypt_data_part1_20> of sequential type is unconnected in block <swled_app>.
+WARNING:Xst:2677 - Node <decrypt_data_part1_21> of sequential type is unconnected in block <swled_app>.
+WARNING:Xst:2677 - Node <decrypt_data_part1_27> of sequential type is unconnected in block <swled_app>.
+WARNING:Xst:2677 - Node <decrypt_data_part1_28> of sequential type is unconnected in block <swled_app>.
+WARNING:Xst:2677 - Node <decrypt_data_part1_29> of sequential type is unconnected in block <swled_app>.
+WARNING:Xst:2677 - Node <uart_data_part1_27> of sequential type is unconnected in block <swled_app>.
+WARNING:Xst:2677 - Node <uart_data_part1_28> of sequential type is unconnected in block <swled_app>.
+WARNING:Xst:2677 - Node <uart_data_part1_29> of sequential type is unconnected in block <swled_app>.
+
+Synthesizing (advanced) Unit <basic_uart>.
+The following registers are absorbed into counter <sample_counter>: 1 register on signal <sample_counter>.
+The following registers are absorbed into counter <rx_state_nbits>: 1 register on signal <rx_state_nbits>.
+The following registers are absorbed into counter <rx_state_counter>: 1 register on signal <rx_state_counter>.
+The following registers are absorbed into counter <tx_state_counter>: 1 register on signal <tx_state_counter>.
+Unit <basic_uart> synthesized (advanced).
+
+Synthesizing (advanced) Unit <debouncer>.
+The following registers are absorbed into counter <count>: 1 register on signal <count>.
+Unit <debouncer> synthesized (advanced).
+
+Synthesizing (advanced) Unit <decrypter>.
+The following registers are absorbed into counter <N1>: 1 register on signal <N1>.
+Unit <decrypter> synthesized (advanced).
+
+Synthesizing (advanced) Unit <encrypter>.
+The following registers are absorbed into counter <N1>: 1 register on signal <N1>.
+The following registers are absorbed into counter <T>: 1 register on signal <T>.
+Unit <encrypter> synthesized (advanced).
+WARNING:Xst:2677 - Node <uart_data_part1_27> of sequential type is unconnected in block <swled>.
+WARNING:Xst:2677 - Node <uart_data_part1_28> of sequential type is unconnected in block <swled>.
+WARNING:Xst:2677 - Node <uart_data_part1_29> of sequential type is unconnected in block <swled>.
+WARNING:Xst:2677 - Node <decrypt_data_part2_3> of sequential type is unconnected in block <swled>.
+WARNING:Xst:2677 - Node <decrypt_data_part2_4> of sequential type is unconnected in block <swled>.
+WARNING:Xst:2677 - Node <decrypt_data_part2_5> of sequential type is unconnected in block <swled>.
+WARNING:Xst:2677 - Node <decrypt_data_part2_11> of sequential type is unconnected in block <swled>.
+WARNING:Xst:2677 - Node <decrypt_data_part2_12> of sequential type is unconnected in block <swled>.
+WARNING:Xst:2677 - Node <decrypt_data_part2_13> of sequential type is unconnected in block <swled>.
+WARNING:Xst:2677 - Node <decrypt_data_part2_19> of sequential type is unconnected in block <swled>.
+WARNING:Xst:2677 - Node <decrypt_data_part2_20> of sequential type is unconnected in block <swled>.
+WARNING:Xst:2677 - Node <decrypt_data_part2_21> of sequential type is unconnected in block <swled>.
+WARNING:Xst:2677 - Node <decrypt_data_part2_27> of sequential type is unconnected in block <swled>.
+WARNING:Xst:2677 - Node <decrypt_data_part2_28> of sequential type is unconnected in block <swled>.
+WARNING:Xst:2677 - Node <decrypt_data_part2_29> of sequential type is unconnected in block <swled>.
+WARNING:Xst:2677 - Node <decrypt_data_part1_3> of sequential type is unconnected in block <swled>.
+WARNING:Xst:2677 - Node <decrypt_data_part1_4> of sequential type is unconnected in block <swled>.
+WARNING:Xst:2677 - Node <decrypt_data_part1_5> of sequential type is unconnected in block <swled>.
+WARNING:Xst:2677 - Node <decrypt_data_part1_11> of sequential type is unconnected in block <swled>.
+WARNING:Xst:2677 - Node <decrypt_data_part1_12> of sequential type is unconnected in block <swled>.
+WARNING:Xst:2677 - Node <decrypt_data_part1_13> of sequential type is unconnected in block <swled>.
+WARNING:Xst:2677 - Node <decrypt_data_part1_19> of sequential type is unconnected in block <swled>.
+WARNING:Xst:2677 - Node <decrypt_data_part1_20> of sequential type is unconnected in block <swled>.
+WARNING:Xst:2677 - Node <decrypt_data_part1_21> of sequential type is unconnected in block <swled>.
+WARNING:Xst:2677 - Node <decrypt_data_part1_27> of sequential type is unconnected in block <swled>.
+WARNING:Xst:2677 - Node <decrypt_data_part1_28> of sequential type is unconnected in block <swled>.
+WARNING:Xst:2677 - Node <decrypt_data_part1_29> of sequential type is unconnected in block <swled>.
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 13
+ 17-bit subtractor                                     : 1
+ 20-bit adder                                          : 5
+ 32-bit adder                                          : 4
+ 32-bit subtractor                                     : 1
+ 4-bit adder                                           : 1
+ 4-bit subtractor                                      : 1
+# Counters                                             : 12
+ 11-bit up counter                                     : 1
+ 20-bit up counter                                     : 5
+ 4-bit up counter                                      : 4
+ 6-bit down counter                                    : 2
+# Registers                                            : 570
+ Flip-Flops                                            : 570
+# Comparators                                          : 18
+ 32-bit comparator greater                             : 18
+# Multiplexers                                         : 1699
+ 1-bit 2-to-1 multiplexer                              : 424
+ 17-bit 2-to-1 multiplexer                             : 3
+ 32-bit 2-to-1 multiplexer                             : 1119
+ 32-bit 4-to-1 multiplexer                             : 9
+ 32-bit 7-to-1 multiplexer                             : 2
+ 4-bit 2-to-1 multiplexer                              : 3
+ 8-bit 2-to-1 multiplexer                              : 136
+ 9-bit 2-to-1 multiplexer                              : 3
+# FSMs                                                 : 1
+# Xors                                                 : 12
+ 1-bit xor2                                            : 10
+ 32-bit xor2                                           : 2
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+Analyzing FSM <MFsm> for best encoding.
+Optimizing FSM <comm_fpga_fx2/FSM_0> on signal <state[1:4]> with user encoding.
+------------------------------------
+ State                  | Encoding
+------------------------------------
+ s_reset                | 0000
+ s_idle                 | 0001
+ s_get_count0           | 0010
+ s_get_count1           | 0011
+ s_begin_write          | 0100
+ s_write                | 0101
+ s_end_write_aligned    | 0110
+ s_end_write_nonaligned | 0111
+ s_read                 | 1000
+------------------------------------
+WARNING:Xst:2677 - Node <uart_data_part2_3> of sequential type is unconnected in block <swled>.
+WARNING:Xst:2677 - Node <uart_data_part2_4> of sequential type is unconnected in block <swled>.
+WARNING:Xst:2677 - Node <uart_data_part2_5> of sequential type is unconnected in block <swled>.
+WARNING:Xst:2677 - Node <uart_data_part2_7> of sequential type is unconnected in block <swled>.
+WARNING:Xst:2677 - Node <uart_data_part2_11> of sequential type is unconnected in block <swled>.
+WARNING:Xst:2677 - Node <uart_data_part2_12> of sequential type is unconnected in block <swled>.
+WARNING:Xst:2677 - Node <uart_data_part2_13> of sequential type is unconnected in block <swled>.
+WARNING:Xst:2677 - Node <uart_data_part2_15> of sequential type is unconnected in block <swled>.
+WARNING:Xst:2677 - Node <uart_data_part2_19> of sequential type is unconnected in block <swled>.
+WARNING:Xst:2677 - Node <uart_data_part2_20> of sequential type is unconnected in block <swled>.
+WARNING:Xst:2677 - Node <uart_data_part2_21> of sequential type is unconnected in block <swled>.
+WARNING:Xst:2677 - Node <uart_data_part2_23> of sequential type is unconnected in block <swled>.
+WARNING:Xst:2677 - Node <uart_data_part2_27> of sequential type is unconnected in block <swled>.
+WARNING:Xst:2677 - Node <uart_data_part2_28> of sequential type is unconnected in block <swled>.
+WARNING:Xst:2677 - Node <uart_data_part2_29> of sequential type is unconnected in block <swled>.
+WARNING:Xst:2677 - Node <uart_data_part2_31> of sequential type is unconnected in block <swled>.
+WARNING:Xst:2677 - Node <uart_data_part1_3> of sequential type is unconnected in block <swled>.
+WARNING:Xst:2677 - Node <uart_data_part1_4> of sequential type is unconnected in block <swled>.
+WARNING:Xst:2677 - Node <uart_data_part1_5> of sequential type is unconnected in block <swled>.
+WARNING:Xst:2677 - Node <uart_data_part1_7> of sequential type is unconnected in block <swled>.
+WARNING:Xst:2677 - Node <uart_data_part1_11> of sequential type is unconnected in block <swled>.
+WARNING:Xst:2677 - Node <uart_data_part1_12> of sequential type is unconnected in block <swled>.
+WARNING:Xst:2677 - Node <uart_data_part1_13> of sequential type is unconnected in block <swled>.
+WARNING:Xst:2677 - Node <uart_data_part1_19> of sequential type is unconnected in block <swled>.
+WARNING:Xst:2677 - Node <uart_data_part1_20> of sequential type is unconnected in block <swled>.
+WARNING:Xst:2677 - Node <uart_data_part1_21> of sequential type is unconnected in block <swled>.
+WARNING:Xst:2677 - Node <uart_data_part1_23> of sequential type is unconnected in block <swled>.
+WARNING:Xst:2677 - Node <uart_data_part1_31> of sequential type is unconnected in block <swled>.
+INFO:Xst:2261 - The FF/Latch <encrypter_inp_13> in Unit <swled> is equivalent to the following FF/Latch, which will be removed : <encrypter_inp_29> 
+INFO:Xst:2261 - The FF/Latch <encrypter_inp_4> in Unit <swled> is equivalent to the following 3 FFs/Latches, which will be removed : <encrypter_inp_12> <encrypter_inp_20> <encrypter_inp_28> 
+INFO:Xst:2261 - The FF/Latch <encrypter_inp_5> in Unit <swled> is equivalent to the following FF/Latch, which will be removed : <encrypter_inp_21> 
+INFO:Xst:2261 - The FF/Latch <encrypter_inp_6> in Unit <swled> is equivalent to the following 3 FFs/Latches, which will be removed : <encrypter_inp_14> <encrypter_inp_22> <encrypter_inp_30> 
+INFO:Xst:2261 - The FF/Latch <encrypter_inp_2> in Unit <swled> is equivalent to the following 3 FFs/Latches, which will be removed : <encrypter_inp_10> <encrypter_inp_18> <encrypter_inp_26> 
+INFO:Xst:2261 - The FF/Latch <encrypter_inp_7> in Unit <swled> is equivalent to the following 3 FFs/Latches, which will be removed : <encrypter_inp_15> <encrypter_inp_23> <encrypter_inp_31> 
+INFO:Xst:2261 - The FF/Latch <encrypter_inp_8> in Unit <swled> is equivalent to the following 2 FFs/Latches, which will be removed : <encrypter_inp_16> <encrypter_inp_24> 
+INFO:Xst:2261 - The FF/Latch <encrypter_inp_3> in Unit <swled> is equivalent to the following 3 FFs/Latches, which will be removed : <encrypter_inp_11> <encrypter_inp_19> <encrypter_inp_27> 
+INFO:Xst:2261 - The FF/Latch <encrypter_inp_9> in Unit <swled> is equivalent to the following FF/Latch, which will be removed : <encrypter_inp_25> 
+
+Optimizing unit <top_level> ...
+
+Optimizing unit <swled> ...
+WARNING:Xst:2677 - Node <uart_data_part1_22> of sequential type is unconnected in block <swled>.
+
+Optimizing unit <decrypter> ...
+
+Optimizing unit <encrypter> ...
+
+Optimizing unit <basic_uart> ...
+
+Optimizing unit <debouncer> ...
+WARNING:Xst:2677 - Node <uart_data_part2_6> of sequential type is unconnected in block <swled>.
+WARNING:Xst:1293 - FF/Latch <swled_app/stage_31> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <swled_app/stage_30> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <swled_app/stage_29> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <swled_app/stage_28> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <swled_app/stage_27> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <swled_app/stage_26> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <swled_app/stage_25> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <swled_app/stage_24> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <swled_app/stage_23> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <swled_app/stage_22> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <swled_app/stage_21> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <swled_app/stage_20> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <swled_app/stage_19> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <swled_app/stage_18> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <swled_app/stage_17> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <swled_app/stage_16> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <swled_app/stage_15> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <swled_app/stage_14> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <swled_app/stage_13> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <swled_app/stage_12> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <swled_app/stage_11> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <swled_app/stage_10> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <swled_app/stage_9> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <swled_app/stage_8> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <swled_app/stage_7> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <swled_app/stage_6> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <swled_app/decrypt1/N1_5> (without init value) has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <swled_app/decrypt1/N1_4> (without init value) has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <swled_app/encypt1/N1_5> (without init value) has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <swled_app/cntrdecrypt_30> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <swled_app/cntrdecrypt_29> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <swled_app/cntrdecrypt_28> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <swled_app/cntrdecrypt_27> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <swled_app/cntrdecrypt_26> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <swled_app/cntrdecrypt_25> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <swled_app/cntrdecrypt_24> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <swled_app/cntrdecrypt_23> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <swled_app/cntrdecrypt_22> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <swled_app/cntrdecrypt_21> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <swled_app/cntrdecrypt_20> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <swled_app/cntrdecrypt_19> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <swled_app/cntrdecrypt_18> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <swled_app/cntrdecrypt_17> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <swled_app/cntrdecrypt_16> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <swled_app/cntrdecrypt_15> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <swled_app/cntrdecrypt_14> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <swled_app/cntrdecrypt_13> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <swled_app/cntrdecrypt_12> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <swled_app/cntrdecrypt_11> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <swled_app/cntrdecrypt_10> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <swled_app/cntrdecrypt_9> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <swled_app/cntrdecrypt_8> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <swled_app/cntrdecrypt_7> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <swled_app/cntrdecrypt_6> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <swled_app/cntrdecrypt_5> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <swled_app/cntrdecrypt_4> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <swled_app/cntrdecrypt_3> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <swled_app/cntrdecrypt_2> has a constant value of 0 in block <top_level>. This FF/Latch will be trimmed during the optimization process.
+INFO:Xst:2261 - The FF/Latch <swled_app/encypt1/C_2> in Unit <top_level> is equivalent to the following 3 FFs/Latches, which will be removed : <swled_app/encypt1/C_26> <swled_app/encypt1/C_18> <swled_app/encypt1/C_10> 
+INFO:Xst:2261 - The FF/Latch <swled_app/encypt1/C_3> in Unit <top_level> is equivalent to the following 3 FFs/Latches, which will be removed : <swled_app/encypt1/C_27> <swled_app/encypt1/C_19> <swled_app/encypt1/C_11> 
+INFO:Xst:2261 - The FF/Latch <swled_app/encypt1/C_4> in Unit <top_level> is equivalent to the following 3 FFs/Latches, which will be removed : <swled_app/encypt1/C_28> <swled_app/encypt1/C_20> <swled_app/encypt1/C_12> 
+INFO:Xst:2261 - The FF/Latch <swled_app/encypt1/C_5> in Unit <top_level> is equivalent to the following 3 FFs/Latches, which will be removed : <swled_app/encypt1/C_29> <swled_app/encypt1/C_21> <swled_app/encypt1/C_13> 
+INFO:Xst:2261 - The FF/Latch <swled_app/encypt1/C_6> in Unit <top_level> is equivalent to the following 3 FFs/Latches, which will be removed : <swled_app/encypt1/C_30> <swled_app/encypt1/C_22> <swled_app/encypt1/C_14> 
+INFO:Xst:2261 - The FF/Latch <swled_app/encypt1/C_7> in Unit <top_level> is equivalent to the following 3 FFs/Latches, which will be removed : <swled_app/encypt1/C_31> <swled_app/encypt1/C_23> <swled_app/encypt1/C_15> 
+INFO:Xst:2261 - The FF/Latch <swled_app/encypt1/C_8> in Unit <top_level> is equivalent to the following 2 FFs/Latches, which will be removed : <swled_app/encypt1/C_24> <swled_app/encypt1/C_16> 
+INFO:Xst:2261 - The FF/Latch <swled_app/encypt1/C_9> in Unit <top_level> is equivalent to the following 2 FFs/Latches, which will be removed : <swled_app/encypt1/C_25> <swled_app/encypt1/C_17> 
+INFO:Xst:2261 - The FF/Latch <swled_app/encrypter_inp_13> in Unit <top_level> is equivalent to the following FF/Latch, which will be removed : <swled_app/encrypter_inp_5> 
+INFO:Xst:2261 - The FF/Latch <swled_app/encrypter_inp_17> in Unit <top_level> is equivalent to the following FF/Latch, which will be removed : <swled_app/encrypter_inp_9> 
+INFO:Xst:2261 - The FF/Latch <swled_app/encypt1/myC_24> in Unit <top_level> is equivalent to the following 2 FFs/Latches, which will be removed : <swled_app/encypt1/myC_16> <swled_app/encypt1/myC_8> 
+INFO:Xst:2261 - The FF/Latch <swled_app/encypt1/myC_30> in Unit <top_level> is equivalent to the following 3 FFs/Latches, which will be removed : <swled_app/encypt1/myC_22> <swled_app/encypt1/myC_14> <swled_app/encypt1/myC_6> 
+INFO:Xst:2261 - The FF/Latch <swled_app/encypt1/myC_25> in Unit <top_level> is equivalent to the following 2 FFs/Latches, which will be removed : <swled_app/encypt1/myC_17> <swled_app/encypt1/myC_9> 
+INFO:Xst:2261 - The FF/Latch <swled_app/encypt1/myC_31> in Unit <top_level> is equivalent to the following 3 FFs/Latches, which will be removed : <swled_app/encypt1/myC_23> <swled_app/encypt1/myC_15> <swled_app/encypt1/myC_7> 
+INFO:Xst:2261 - The FF/Latch <swled_app/encypt1/myC_26> in Unit <top_level> is equivalent to the following 3 FFs/Latches, which will be removed : <swled_app/encypt1/myC_18> <swled_app/encypt1/myC_10> <swled_app/encypt1/myC_2> 
+INFO:Xst:2261 - The FF/Latch <swled_app/encypt1/myC_27> in Unit <top_level> is equivalent to the following 3 FFs/Latches, which will be removed : <swled_app/encypt1/myC_19> <swled_app/encypt1/myC_11> <swled_app/encypt1/myC_3> 
+INFO:Xst:2261 - The FF/Latch <swled_app/encypt1/myC_28> in Unit <top_level> is equivalent to the following 3 FFs/Latches, which will be removed : <swled_app/encypt1/myC_20> <swled_app/encypt1/myC_12> <swled_app/encypt1/myC_4> 
+INFO:Xst:2261 - The FF/Latch <swled_app/encypt1/myC_29> in Unit <top_level> is equivalent to the following 3 FFs/Latches, which will be removed : <swled_app/encypt1/myC_21> <swled_app/encypt1/myC_13> <swled_app/encypt1/myC_5> 
+INFO:Xst:3203 - The FF/Latch <swled_app/my_uart/tx_state_ready> in Unit <top_level> is the opposite to the following FF/Latch, which will be removed : <swled_app/my_uart/tx_state_fsm_state> 
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block top_level, actual ratio is 13.
+FlipFlop comm_fpga_fx2/chanAddr_0 has been replicated 1 time(s)
+FlipFlop comm_fpga_fx2/state_FSM_FFd1 has been replicated 1 time(s)
+FlipFlop comm_fpga_fx2/state_FSM_FFd2 has been replicated 1 time(s)
+FlipFlop comm_fpga_fx2/state_FSM_FFd3 has been replicated 1 time(s)
+FlipFlop comm_fpga_fx2/state_FSM_FFd4 has been replicated 2 time(s)
+FlipFlop swled_app/cntrdecrypt_0 has been replicated 2 time(s)
+FlipFlop swled_app/cntrdecrypt_1 has been replicated 2 time(s)
+FlipFlop swled_app/decrypt1/done has been replicated 1 time(s)
+FlipFlop swled_app/stage_0 has been replicated 1 time(s)
+FlipFlop swled_app/stage_1 has been replicated 3 time(s)
+FlipFlop swled_app/stage_2 has been replicated 1 time(s)
+FlipFlop swled_app/stage_3 has been replicated 1 time(s)
+FlipFlop swled_app/stage_4 has been replicated 4 time(s)
+FlipFlop swled_app/stage_5 has been replicated 3 time(s)
+FlipFlop swled_app/timer_12 has been replicated 1 time(s)
+FlipFlop swled_app/timer_13 has been replicated 1 time(s)
+FlipFlop swled_app/timer_14 has been replicated 3 time(s)
+FlipFlop swled_app/timer_15 has been replicated 2 time(s)
+FlipFlop swled_app/timer_16 has been replicated 1 time(s)
+FlipFlop swled_app/timer_17 has been replicated 2 time(s)
+FlipFlop swled_app/timer_18 has been replicated 2 time(s)
+FlipFlop swled_app/timer_19 has been replicated 2 time(s)
+FlipFlop swled_app/timer_20 has been replicated 1 time(s)
+FlipFlop swled_app/timer_21 has been replicated 1 time(s)
+FlipFlop swled_app/timer_22 has been replicated 1 time(s)
+FlipFlop swled_app/timer_23 has been replicated 2 time(s)
+FlipFlop swled_app/timer_24 has been replicated 2 time(s)
+FlipFlop swled_app/timer_25 has been replicated 2 time(s)
+FlipFlop swled_app/timer_26 has been replicated 2 time(s)
+FlipFlop swled_app/timer_27 has been replicated 2 time(s)
+FlipFlop swled_app/timer_28 has been replicated 2 time(s)
+FlipFlop swled_app/timer_29 has been replicated 1 time(s)
+FlipFlop swled_app/timer_30 has been replicated 1 time(s)
+FlipFlop swled_app/timer_31 has been replicated 1 time(s)
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 614
+ Flip-Flops                                            : 614
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Design Summary                             *
+=========================================================================
+
+Top Level Output File Name         : top_level.ngc
+
+Primitive and Black Box Usage:
+------------------------------
+# BELS                             : 4646
+#      GND                         : 1
+#      INV                         : 67
+#      LUT1                        : 288
+#      LUT2                        : 198
+#      LUT3                        : 252
+#      LUT4                        : 314
+#      LUT5                        : 622
+#      LUT6                        : 2021
+#      MUXCY                       : 416
+#      MUXF7                       : 107
+#      VCC                         : 1
+#      XORCY                       : 359
+# FlipFlops/Latches                : 614
+#      FD                          : 45
+#      FDC                         : 12
+#      FDCE                        : 63
+#      FDE                         : 120
+#      FDPE                        : 13
+#      FDR                         : 275
+#      FDRE                        : 83
+#      FDS                         : 3
+# Clock Buffers                    : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 39
+#      IBUF                        : 16
+#      IOBUF                       : 8
+#      OBUF                        : 9
+#      OBUFT                       : 6
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 6slx45csg324-2 
+
+
+Slice Logic Utilization: 
+ Number of Slice Registers:             614  out of  54576     1%  
+ Number of Slice LUTs:                 3762  out of  27288    13%  
+    Number used as Logic:              3762  out of  27288    13%  
+
+Slice Logic Distribution: 
+ Number of LUT Flip Flop pairs used:   3935
+   Number with an unused Flip Flop:    3321  out of   3935    84%  
+   Number with an unused LUT:           173  out of   3935     4%  
+   Number of fully used LUT-FF pairs:   441  out of   3935    11%  
+   Number of unique control sets:        46
+
+IO Utilization: 
+ Number of IOs:                          40
+ Number of bonded IOBs:                  40  out of    218    18%  
+
+Specific Feature Utilization:
+ Number of BUFG/BUFGCTRLs:                1  out of     16     6%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+Timing Report
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+fx2Clk_in                          | BUFGP                  | 614   |
+-----------------------------------+------------------------+-------+
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -2
+
+   Minimum period: 15.071ns (Maximum Frequency: 66.351MHz)
+   Minimum input arrival time before clock: 15.576ns
+   Maximum output required time after clock: 10.409ns
+   Maximum combinational path delay: 8.211ns
+
+Timing Details:
+---------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'fx2Clk_in'
+  Clock period: 15.071ns (frequency: 66.351MHz)
+  Total number of paths / destination ports: 5218328 / 1309
+-------------------------------------------------------------------------
+Delay:               15.071ns (Levels of Logic = 13)
+  Source:            swled_app/stage_3_1 (FF)
+  Destination:       swled_app/stage_3 (FF)
+  Source Clock:      fx2Clk_in rising
+  Destination Clock: fx2Clk_in rising
+
+  Data Path: swled_app/stage_3_1 to swled_app/stage_3
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDRE:C->Q            20   0.525   1.716  swled_app/stage_3_1 (swled_app/stage_3_1)
+     LUT6:I1->O          156   0.254   2.369  swled_app/GND_23_o_stage[31]_equal_206_o<31>1 (swled_app/GND_23_o_stage[31]_equal_206_o)
+     LUT5:I4->O            1   0.254   0.682  swled_app/GND_23_o_stage[31]_equal_347_o13123_SW0 (N868)
+     LUT6:I5->O            3   0.254   0.766  swled_app/GND_23_o_stage[31]_equal_347_o13123 (swled_app/GND_23_o_stage[31]_equal_347_o13123)
+     LUT3:I2->O            3   0.254   0.994  swled_app/GND_23_o_stage[31]_equal_347_o13125_SW1 (N948)
+     LUT6:I3->O            1   0.235   0.790  swled_app/GND_23_o_stage[31]_equal_347_o132_SW0_SW0 (N1771)
+     LUT6:I4->O            1   0.250   0.682  swled_app/GND_23_o_stage[31]_equal_347_o132 (swled_app/GND_23_o_stage[31]_equal_347_o_mmx_out103)
+     LUT6:I5->O            1   0.254   0.682  swled_app/Mmux_stage[31]_GND_23_o_mux_654_OUT100211 (swled_app/Mmux_stage[31]_GND_23_o_mux_654_OUT100210)
+     LUT6:I5->O            3   0.254   0.766  swled_app/Mmux_stage[31]_GND_23_o_mux_654_OUT100213 (swled_app/Mmux_stage[31]_GND_23_o_mux_654_OUT100212)
+     LUT6:I5->O            1   0.254   0.000  swled_app/Mmux_stage[31]_GND_23_o_mux_654_OUT1002148_SW1_F (N2268)
+     MUXF7:I0->O           4   0.163   0.804  swled_app/Mmux_stage[31]_GND_23_o_mux_654_OUT1002148_SW1 (N400)
+     LUT6:I5->O            1   0.254   1.112  swled_app/Mmux_stage[31]_GND_23_o_mux_654_OUT1002147_SW1_G (N2293)
+     LUT6:I1->O            1   0.254   0.000  swled_app/Mmux_stage[31]_GND_23_o_mux_654_OUT1002149_G (N2483)
+     MUXF7:I1->O           2   0.175   0.000  swled_app/Mmux_stage[31]_GND_23_o_mux_654_OUT1002149 (swled_app/stage[31]_GND_23_o_mux_654_OUT<3>)
+     FDRE:D                    0.074          swled_app/stage_3
+    ----------------------------------------
+    Total                     15.071ns (3.708ns logic, 11.363ns route)
+                                       (24.6% logic, 75.4% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'fx2Clk_in'
+  Total number of paths / destination ports: 49944 / 403
+-------------------------------------------------------------------------
+Offset:              15.576ns (Levels of Logic = 14)
+  Source:            fx2GotData_in (PAD)
+  Destination:       swled_app/stage_3 (FF)
+  Destination Clock: fx2Clk_in rising
+
+  Data Path: fx2GotData_in to swled_app/stage_3
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O            14   1.328   1.355  fx2GotData_in_IBUF (fx2GotData_in_IBUF)
+     LUT3:I0->O           14   0.235   1.235  swled_app/GND_23_o_GND_23_o_AND_11_o1_SW0_1 (swled_app/GND_23_o_GND_23_o_AND_11_o1_SW0)
+     LUT6:I4->O           25   0.250   1.631  swled_app/done_decrypt_PWR_14_o_AND_30_o1011_2 (swled_app/done_decrypt_PWR_14_o_AND_30_o10111)
+     LUT5:I2->O            3   0.235   0.994  swled_app/Mmux__n855534621 (swled_app/Mmux__n85553462)
+     LUT6:I3->O            2   0.235   0.834  swled_app/Mmux__n85553424 (swled_app/Mmux__n85553423)
+     LUT6:I4->O            4   0.250   0.912  swled_app/GND_23_o_stage[31]_equal_295_o2271 (swled_app/GND_23_o_stage[31]_equal_295_o_mmx_out2011)
+     LUT5:I3->O            1   0.250   0.790  swled_app/GND_23_o_stage[31]_equal_347_o134 (swled_app/GND_23_o_stage[31]_equal_347_o_mmx_out104)
+     LUT6:I4->O            1   0.250   0.682  swled_app/Mmux_stage[31]_GND_23_o_mux_654_OUT100211 (swled_app/Mmux_stage[31]_GND_23_o_mux_654_OUT100210)
+     LUT6:I5->O            3   0.254   0.766  swled_app/Mmux_stage[31]_GND_23_o_mux_654_OUT100213 (swled_app/Mmux_stage[31]_GND_23_o_mux_654_OUT100212)
+     LUT6:I5->O            1   0.254   0.000  swled_app/Mmux_stage[31]_GND_23_o_mux_654_OUT1002148_SW1_F (N2268)
+     MUXF7:I0->O           4   0.163   0.804  swled_app/Mmux_stage[31]_GND_23_o_mux_654_OUT1002148_SW1 (N400)
+     LUT6:I5->O            1   0.254   1.112  swled_app/Mmux_stage[31]_GND_23_o_mux_654_OUT1002147_SW1_G (N2293)
+     LUT6:I1->O            1   0.254   0.000  swled_app/Mmux_stage[31]_GND_23_o_mux_654_OUT1002149_G (N2483)
+     MUXF7:I1->O           2   0.175   0.000  swled_app/Mmux_stage[31]_GND_23_o_mux_654_OUT1002149 (swled_app/stage[31]_GND_23_o_mux_654_OUT<3>)
+     FDRE:D                    0.074          swled_app/stage_3
+    ----------------------------------------
+    Total                     15.576ns (4.461ns logic, 11.115ns route)
+                                       (28.6% logic, 71.4% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'fx2Clk_in'
+  Total number of paths / destination ports: 314 / 23
+-------------------------------------------------------------------------
+Offset:              10.409ns (Levels of Logic = 5)
+  Source:            comm_fpga_fx2/chanAddr_5 (FF)
+  Destination:       fx2Data_io<7> (PAD)
+  Source Clock:      fx2Clk_in rising
+
+  Data Path: comm_fpga_fx2/chanAddr_5 to fx2Data_io<7>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDE:C->Q              4   0.525   1.259  comm_fpga_fx2/chanAddr_5 (comm_fpga_fx2/chanAddr_5)
+     LUT6:I0->O           35   0.254   1.570  swled_app/GND_23_o_h2fValid_in_AND_12_o11 (swled_app/GND_23_o_h2fValid_in_AND_12_o1)
+     LUT3:I2->O            2   0.254   0.954  swled_app/Mmux_f2hValid_out11 (f2hValid)
+     LUT6:I3->O           18   0.235   1.511  comm_fpga_fx2/driveBus_inv1 (comm_fpga_fx2/driveBus_inv)
+     LUT4:I0->O            1   0.254   0.681  comm_fpga_fx2/Mmux_dataOut11 (comm_fpga_fx2/dataOut<0>)
+     IOBUF:I->IO               2.912          fx2Data_io_0_IOBUF (fx2Data_io<0>)
+    ----------------------------------------
+    Total                     10.409ns (4.434ns logic, 5.975ns route)
+                                       (42.6% logic, 57.4% route)
+
+=========================================================================
+Timing constraint: Default path analysis
+  Total number of paths / destination ports: 19 / 11
+-------------------------------------------------------------------------
+Delay:               8.211ns (Levels of Logic = 4)
+  Source:            fx2GotRoom_in (PAD)
+  Destination:       fx2Data_io<7> (PAD)
+
+  Data Path: fx2GotRoom_in to fx2Data_io<7>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             5   1.328   1.271  fx2GotRoom_in_IBUF (fx2GotRoom_in_IBUF)
+     LUT6:I1->O           18   0.254   1.511  comm_fpga_fx2/driveBus_inv1 (comm_fpga_fx2/driveBus_inv)
+     LUT4:I0->O            1   0.254   0.681  comm_fpga_fx2/Mmux_dataOut11 (comm_fpga_fx2/dataOut<0>)
+     IOBUF:I->IO               2.912          fx2Data_io_0_IOBUF (fx2Data_io<0>)
+    ----------------------------------------
+    Total                      8.211ns (4.748ns logic, 3.463ns route)
+                                       (57.8% logic, 42.2% route)
+
+=========================================================================
+
+Cross Clock Domains Report:
+--------------------------
+
+Clock to Setup on destination clock fx2Clk_in
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+fx2Clk_in      |   15.071|         |         |         |
+---------------+---------+---------+---------+---------+
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 169.00 secs
+Total CPU time to Xst completion: 167.56 secs
+ 
+--> 
+
+
+Total memory usage is 521596 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :  143 (   0 filtered)
+Number of infos    :   28 (   0 filtered)
+
